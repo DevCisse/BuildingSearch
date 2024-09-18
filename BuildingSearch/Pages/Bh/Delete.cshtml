@@ -1,0 +1,70 @@
+﻿@page
+@model BuildingSearch.Pages.Bh.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Building</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Building.BATCH_NO)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Building.BATCH_NO)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Building.CAD_ZONE)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Building.CAD_ZONE)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Building.PLOT_NO)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Building.PLOT_NO)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Building.FILE_NUMBER)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Building.FILE_NUMBER)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Building.DEVELOPER_S_NAME)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Building.DEVELOPER_S_NAME)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Building.DATE)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Building.DATE)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Building.DATE_RETURNED)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Building.DATE_RETURNED)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Building.ORIGINAL_FILE_LOCATION)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Building.ORIGINAL_FILE_LOCATION)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Building.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

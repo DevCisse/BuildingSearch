@@ -1,0 +1,78 @@
+﻿@page
+@model BuildingSearch.Pages.Bh.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Building[0].BATCH_NO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Building[0].CAD_ZONE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Building[0].PLOT_NO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Building[0].FILE_NUMBER)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Building[0].DEVELOPER_S_NAME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Building[0].DATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Building[0].DATE_RETURNED)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Building[0].ORIGINAL_FILE_LOCATION)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Building) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BATCH_NO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CAD_ZONE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PLOT_NO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FILE_NUMBER)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEVELOPER_S_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATE_RETURNED)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ORIGINAL_FILE_LOCATION)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

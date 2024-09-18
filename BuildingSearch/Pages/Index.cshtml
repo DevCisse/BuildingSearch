@@ -1,0 +1,66 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+
+
+@* <form method="post">
+    Name:
+    <input asp-for="Customer!.Name" />
+    <input type="submit" />
+</form> *@
+<div class="text-center">
+
+   
+    <!-- Floating Labels Form -->
+    <form class="row g-3" Model="Input" OnValidSubmit="Submit" method="post">
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input asp-for="Customer.PlotNo" class="form-control" aria-required="true" />
+                <label for="floatingEmail">Plot No</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input asp-for="Customer.Zone" class="form-control" aria-required="true" />
+                <label for="floatingEmail">Cadastral Zone</label>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-primary ">Search</button>
+        </div>
+    </form>
+
+    @if (Model.SearchResult)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    @* <th scope="col">#</th> *@
+                    <th scope="col">Cad Zone</th>
+                    <th scope="col">Plot No</th>
+                    <th scope="col">File No</th>
+                    <th scope="col">Developer's  Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+               @*      <th scope="row">1</th> *@
+                    <td>@Model.Building.CAD_ZONE</td>
+                    <td>@Model.Building.PLOT_NO</td>
+                    <td>@Model.Building.FILE_NUMBER</td>
+                    <td>@Model.Building.DEVELOPER_S_NAME</td>
+               
+                </tr>
+
+            </tbody>
+        </table>
+    }
+
+</div>
+
+
